@@ -11,8 +11,8 @@ let r_but=document.getElementById('right');
 ctx.fillStyle='black';
 ctx.fillRect(0,0,canvas.width,canvas.height);
 ctx.fillStyle='red';
-ctx.font="20px arial";
-ctx.fillText("press here to start", 90,280);
+ctx.font="30px arial";
+ctx.fillText("Press here to start", 57,275);
 //
 
 
@@ -68,7 +68,7 @@ class traffic {
         this.y2 = y2;
         this.y3 = y3;
         this.ctx = ctx;
-        this.dy = 10;
+        this.dy = 8;
         this.widht=72;
         this.height=83;
 
@@ -135,13 +135,16 @@ function animate() {
         if(sc>a) localStorage.setItem('highscore', sc);
         ctx.fillStyle='white'
         ctx.font = "50px Arial";
-        ctx.fillText("GAMEOVER", 30, 255);
+        ctx.fillText("GAMEOVER", 35, 255);
         ctx.font = "35px Arial";
-        ctx.fillText("Press here to restart", 15, 300);
+        ctx.fillText("Press here to restart", 18, 300);
+        //resets the values
         ob.y1=0;
         ob.y2=-100;
         ob.y3=-480;
         sc=0;
+        ob.dy=8;
+        //
         return;
     };
     requestAnimationFrame(animate);
